@@ -9,10 +9,10 @@ import (
 
 	"github.com/labstack/gommon/log"
 	_ "github.com/lib/pq"
-	"github.com/vrg18/postgrest-auth/pkg/api"
-	"github.com/vrg18/postgrest-auth/pkg/config"
-	"github.com/vrg18/postgrest-auth/pkg/mail"
-	"github.com/vrg18/postgrest-auth/pkg/model"
+	"postgrest-auth/pkg/api"
+	"postgrest-auth/pkg/config"
+	"postgrest-auth/pkg/mail"
+	"postgrest-auth/pkg/model"
 )
 
 func main() {

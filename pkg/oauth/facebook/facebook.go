@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/vrg18/postgrest-auth/pkg/model"
-	"github.com/vrg18/postgrest-auth/pkg/oauth"
+	"postgrest-auth/pkg/model"
+	"postgrest-auth/pkg/oauth"
 )
 
 type facebookProvider struct {

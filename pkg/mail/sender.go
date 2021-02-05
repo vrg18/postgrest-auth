@@ -1,8 +1,8 @@
 package mail
 
 import (
-	"github.com/vrg18/postgrest-auth/pkg/config"
 	gomail "gopkg.in/gomail.v2"
+	"postgrest-auth/pkg/config"
 )
 
 // sender is the config for sending emails
