@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/alexandrevilain/postgrest-auth/pkg/oauth"
+	"postgrest-auth/pkg/oauth"
 
-	"github.com/alexandrevilain/postgrest-auth/pkg/config"
-	"github.com/alexandrevilain/postgrest-auth/pkg/mail"
-	"github.com/alexandrevilain/postgrest-auth/pkg/model"
-	"github.com/alexandrevilain/postgrest-auth/pkg/oauth/facebook"
-	"github.com/alexandrevilain/postgrest-auth/pkg/oauth/google"
 	"github.com/labstack/echo"
+	"postgrest-auth/pkg/config"
+	"postgrest-auth/pkg/mail"
+	"postgrest-auth/pkg/model"
+	"postgrest-auth/pkg/oauth/facebook"
+	"postgrest-auth/pkg/oauth/google"
 )
 
 type handler struct {
@@ -197,11 +197,14 @@ func (h *handler) signinWithProvider(c echo.Context) error {
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err.Error())
 	}
-	if err := user.CreateRandomPassword(12); err != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, fmt.Sprintf("An error occurred while creating your account :  %s", err.Error()))
-	}
-	if err := user.Create(h.db); err != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, fmt.Sprintf("An error occurred while creating your account:  %s", err.Error()))
+
+	if err := user.FindByEmail(h.db); err != nil {
+		if err := user.CreateRandomPassword(12); err != nil {
+			return echo.NewHTTPError(http.StatusInternalServerError, fmt.Sprintf("An error occurred while creating your account :  %s", err.Error()))
+		}
+		if err := user.CreateFromSocial(h.db); err != nil {
+			return echo.NewHTTPError(http.StatusInternalServerError, fmt.Sprintf("An error occurred while creating your account:  %s", err.Error()))
+		}
 	}
 	token, err := user.CreateJWTToken(h.config.DB.Roles.User, h.config.JWT.Secret, h.config.JWT.Exp)
 	if err != nil {
@@ -212,5 +215,4 @@ func (h *handler) signinWithProvider(c echo.Context) error {
 		"user":  user.GetMapRepresentation(),
 		"token": token,
 	})
-
 }

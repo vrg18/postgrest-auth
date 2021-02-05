@@ -19,16 +19,19 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:44cf1ca14c9d8a8a168c34edb6ae88bb4e5bca6660875ac523d2ab5a2b007825"
+  digest = "1:a3ca0d8ae58e63820b51807432d48153d5e235dd483c0d5907038c8b2f85a6b0"
   name = "github.com/alexandrevilain/postgrest-auth"
   packages = [
     "pkg/api",
     "pkg/config",
     "pkg/mail",
     "pkg/model",
+    "pkg/oauth",
+    "pkg/oauth/facebook",
+    "pkg/oauth/google",
   ]
   pruneopts = "UT"
-  revision = "e4e71cee6f0c63f05ff6236a0fadd9e751dca364"
+  revision = "5377c57232007072563ba3400978ce131ad896b6"
 
 [[projects]]
   digest = "1:10bb36acbe3beb4e529f2711e02c66335adc17dffaceb1d6ceca9554c2d8baa0"
@@ -281,6 +284,9 @@
     "github.com/alexandrevilain/postgrest-auth/pkg/config",
     "github.com/alexandrevilain/postgrest-auth/pkg/mail",
     "github.com/alexandrevilain/postgrest-auth/pkg/model",
+    "github.com/alexandrevilain/postgrest-auth/pkg/oauth",
+    "github.com/alexandrevilain/postgrest-auth/pkg/oauth/facebook",
+    "github.com/alexandrevilain/postgrest-auth/pkg/oauth/google",
     "github.com/dchest/passwordreset",
     "github.com/dgrijalva/jwt-go",
     "github.com/kelseyhightower/envconfig",

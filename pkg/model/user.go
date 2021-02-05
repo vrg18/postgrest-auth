@@ -39,6 +39,12 @@ func (u *User) Create(db *sql.DB) error {
 	return db.QueryRow("INSERT INTO auth.users(id, email, password, confirmToken) VALUES($1, $2, $3, $4) RETURNING id", u.ID, u.Email, u.Password, u.ConfirmToken).Scan(&u.ID)
 }
 
+// Create allow us to create new user in database from social
+func (u *User) CreateFromSocial(db *sql.DB) error {
+	u.ID = uuid.NewV4().String()
+	return db.QueryRow("INSERT INTO auth.users(id, email, password, confirmed) VALUES($1, $2, $3, $4) RETURNING id", u.ID, u.Email, u.Password, u.Confirmed).Scan(&u.ID)
+}
+
 // GeneratePassword generate random password
 func (u *User) CreateRandomPassword(length int) error {
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

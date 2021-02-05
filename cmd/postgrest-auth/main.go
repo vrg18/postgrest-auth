@@ -7,12 +7,12 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/alexandrevilain/postgrest-auth/pkg/api"
-	"github.com/alexandrevilain/postgrest-auth/pkg/config"
-	"github.com/alexandrevilain/postgrest-auth/pkg/mail"
-	"github.com/alexandrevilain/postgrest-auth/pkg/model"
 	"github.com/labstack/gommon/log"
 	_ "github.com/lib/pq"
+	"postgrest-auth/pkg/api"
+	"postgrest-auth/pkg/config"
+	"postgrest-auth/pkg/mail"
+	"postgrest-auth/pkg/model"
 )
 
 func main() {
