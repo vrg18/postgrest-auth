@@ -18,22 +18,6 @@
   version = "v2.16.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:a3ca0d8ae58e63820b51807432d48153d5e235dd483c0d5907038c8b2f85a6b0"
-  name = "github.com/alexandrevilain/postgrest-auth"
-  packages = [
-    "pkg/api",
-    "pkg/config",
-    "pkg/mail",
-    "pkg/model",
-    "pkg/oauth",
-    "pkg/oauth/facebook",
-    "pkg/oauth/google",
-  ]
-  pruneopts = "UT"
-  revision = "5377c57232007072563ba3400978ce131ad896b6"
-
-[[projects]]
   digest = "1:10bb36acbe3beb4e529f2711e02c66335adc17dffaceb1d6ceca9554c2d8baa0"
   name = "github.com/aokoli/goutils"
   packages = ["."]
@@ -220,6 +204,22 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:3117d44147b3187c237d8d4750f78da5fb10d59ae2be66e090e6cdce95652205"
+  name = "github.com/vrg18/postgrest-auth"
+  packages = [
+    "pkg/api",
+    "pkg/config",
+    "pkg/mail",
+    "pkg/model",
+    "pkg/oauth",
+    "pkg/oauth/facebook",
+    "pkg/oauth/google",
+  ]
+  pruneopts = "UT"
+  revision = "1e11d5f61549ac8a2e0a09149696070176850738"
+
+[[projects]]
+  branch = "master"
   digest = "1:b609b6a27d4a257c6c8bfdfc84682b704d276ef0af961f75ab823c8207e65ada"
   name = "golang.org/x/crypto"
   packages = [
@@ -280,13 +280,6 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/alexandrevilain/postgrest-auth/pkg/api",
-    "github.com/alexandrevilain/postgrest-auth/pkg/config",
-    "github.com/alexandrevilain/postgrest-auth/pkg/mail",
-    "github.com/alexandrevilain/postgrest-auth/pkg/model",
-    "github.com/alexandrevilain/postgrest-auth/pkg/oauth",
-    "github.com/alexandrevilain/postgrest-auth/pkg/oauth/facebook",
-    "github.com/alexandrevilain/postgrest-auth/pkg/oauth/google",
     "github.com/dchest/passwordreset",
     "github.com/dgrijalva/jwt-go",
     "github.com/kelseyhightower/envconfig",
@@ -296,6 +289,13 @@
     "github.com/lib/pq",
     "github.com/matcornic/hermes",
     "github.com/satori/go.uuid",
+    "github.com/vrg18/postgrest-auth/pkg/api",
+    "github.com/vrg18/postgrest-auth/pkg/config",
+    "github.com/vrg18/postgrest-auth/pkg/mail",
+    "github.com/vrg18/postgrest-auth/pkg/model",
+    "github.com/vrg18/postgrest-auth/pkg/oauth",
+    "github.com/vrg18/postgrest-auth/pkg/oauth/facebook",
+    "github.com/vrg18/postgrest-auth/pkg/oauth/google",
     "golang.org/x/crypto/bcrypt",
     "gopkg.in/gomail.v2",
   ]

@@ -2,7 +2,7 @@ package mail
 
 import (
 	"github.com/matcornic/hermes"
-	"postgrest-auth/pkg/config"
+	"github.com/vrg18/postgrest-auth/pkg/config"
 )
 
 // EmailGenerator is the struct keeping the base config of hermes

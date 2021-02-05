@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"postgrest-auth/pkg/model"
-	"postgrest-auth/pkg/oauth"
+
+	"github.com/vrg18/postgrest-auth/pkg/model"
+	"github.com/vrg18/postgrest-auth/pkg/oauth"
 )
 
 type googleProvider struct {

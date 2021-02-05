@@ -6,7 +6,7 @@ import (
 	"html/template"
 
 	"github.com/labstack/gommon/log"
-	"postgrest-auth/pkg/config"
+	"github.com/vrg18/postgrest-auth/pkg/config"
 )
 
 // EnsureDBElementsExists ensure that required tables/roles/schemas, exists on the database
