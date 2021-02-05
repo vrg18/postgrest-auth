@@ -211,9 +211,6 @@
     "pkg/config",
     "pkg/mail",
     "pkg/model",
-    "pkg/oauth",
-    "pkg/oauth/facebook",
-    "pkg/oauth/google",
   ]
   pruneopts = "UT"
   revision = "1e11d5f61549ac8a2e0a09149696070176850738"
@@ -293,9 +290,6 @@
     "github.com/vrg18/postgrest-auth/pkg/config",
     "github.com/vrg18/postgrest-auth/pkg/mail",
     "github.com/vrg18/postgrest-auth/pkg/model",
-    "github.com/vrg18/postgrest-auth/pkg/oauth",
-    "github.com/vrg18/postgrest-auth/pkg/oauth/facebook",
-    "github.com/vrg18/postgrest-auth/pkg/oauth/google",
     "golang.org/x/crypto/bcrypt",
     "gopkg.in/gomail.v2",
   ]
